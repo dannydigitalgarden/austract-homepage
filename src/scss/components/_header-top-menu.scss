@@ -1,0 +1,42 @@
+.header-top-menu {
+    .header-top-menu-links {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        .link-item {
+            margin-left: 1rem;
+            a {
+                color: white;
+                text-decoration: none;
+                font-family: $font-bold;
+                font-size: 1rem;
+            }
+
+            &.austrac-online {
+                a {
+                    background-color: $secondary-color;
+                    background-image: url("../../src/images/icons/external-link-black.svg") !important;
+                    background-repeat: no-repeat;
+                    background-position: right 15px center;
+                    color: $black !important;
+                    padding: 1rem 3rem 1rem 1.5rem;
+                    display: block;
+                    font-family: $font-regular;
+                    clip-path: polygon(10% 1%,100% 0%,100% 100%,0% 100%);
+                }
+            }
+
+            &.subscribe {
+                margin-left: 0;
+                a {
+                    background-color: rgba(0, 0, 0, 0.35);
+                    padding: 1rem;
+                    display: block;
+                    font-family: $font-regular;
+                    
+                }
+            }
+        }
+    }
+}

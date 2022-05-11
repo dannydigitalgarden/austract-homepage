@@ -1,0 +1,67 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-regular;
+  line-height: normal;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a[href^="tel"] {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+//Reset Field
+
+input:not([type="checkbox"]) {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input::placeholder {
+  opacity: 1 !important;
+}
+
+select::-ms-expand {
+  display: none;
+}
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: transparent;
+}
+
+textarea {
+  border-radius: 0;
+}

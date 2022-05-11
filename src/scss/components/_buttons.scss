@@ -1,0 +1,80 @@
+
+
+@mixin button($bg: $primary-color, $color: $white) {
+  border: none;
+  color: $color;
+  background-color: $bg;
+  cursor: pointer;
+  line-height: normal;
+  font-family: $font-bold;
+  font-size: 16px;
+  padding: 11px 20px 13px 20px;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  white-space: nowrap;
+  margin: 0;
+  letter-spacing: normal;
+  width: auto;
+  transition: color $trans-base, background-color $trans-base, filter $trans-base;
+  outline: 0;
+  border-radius: 25px;
+  transition: 0.3s;
+
+  @include medium {
+    font-size: 18px;
+    padding: 15px 32px 15px 32px;
+  }
+
+  &:visited {
+    color: $color;
+  }
+
+  &::after {
+    display: none;
+  }
+
+  &:hover {
+    color: $color;
+    filter: brightness(1.15);
+  }
+}
+
+.radio-buttons .form-item--radio .form-item__label,
+.button-links a,
+.button,
+.button-primary {
+  @include button();
+}
+
+.button-secondary {
+  @include button(transparent, #212121);
+  font-size: 16px !important;
+}
+
+.button-full {
+  width: 100%;
+}
+
+.button-icon {
+  margin-left: 0;
+  margin-right: 0;
+  background-position: right 15px center;
+  background-repeat: no-repeat;
+  background-size: 18px;
+  line-height: $line-height-1;
+}
+
+.button-primary.button-icon  {
+  background-image: url('../../src/images/icons/arrow-right-white.svg');
+  padding: 14px 45px 14px 25px;
+}
+
+.button-secondary.button-icon  {
+  background-image: url('../../src/images/icons/arrow-right-blue.svg');
+  padding: 14px 40px 14px 0;
+
+  &:hover {
+    color: $primary-color;
+  }
+}

@@ -1,0 +1,55 @@
+.latest-news {
+    &__top {
+        margin-bottom: 2rem;
+        @include medium {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    &__listing {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 1rem;
+
+        @include medium {
+            grid-template-columns: repeat(3, 1fr);
+            column-gap: 2rem;
+        }
+    }
+}
+
+.latest-news__card {
+    position: relative;
+    padding: 2rem 2rem 4rem 2rem;
+    background-color: $gray-1;
+    border-radius: 2px;
+
+    &-date {
+        font-size: 18px;
+        color: $text-dark;
+        margin-bottom: 1rem;
+    }
+
+    &-title {
+        text-decoration: none;
+        color: $primary-color;
+        line-height: normal;
+        margin-bottom: 1rem;
+        display: block;
+    }
+
+    &-intro {
+        color: $text-dark;
+        font-family: $font-regular;
+        line-height: 1.63;
+        margin-bottom: 1rem;
+    }
+
+    &-readmore {
+        position: absolute;
+        bottom: 1rem;
+        left: 2rem;
+    }
+}

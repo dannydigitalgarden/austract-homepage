@@ -1,0 +1,232 @@
+$footer-breakpoint: 1024px;
+
+.footer {
+  color: $white;
+  font-size: 14px;
+  font-size: 14px;
+  font-family: $font-regular;
+  line-height: 1.57;
+
+  a:not(.button-primary) {
+    color: $white;
+    text-decoration: none;
+    line-height: 1.2;
+  }
+
+  .footer-button-online,
+  .footer-button-subscribe {
+    font-family: $font-regular !important;
+    display: block;
+    width: 220px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  .footer-button-online {
+    background-color: $secondary-color !important;
+    background-image: url("../../src/images/icons/external-link-black.svg") !important;
+    color: $black !important;
+  }
+
+  .footer-button-subscribe {
+    background-color: rgba(0, 0, 0, 0.35) !important;
+  }
+
+  &__top {
+    background-color: #155176;
+
+    @include breakpoint($footer-breakpoint) {
+      position: relative;
+      overflow: hidden;
+      &::before {
+        content: "";
+        width: calc((100vw - 1200px) / 2 + 400px);
+        height: 100%;
+        background-color: $primary-color;
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 0;
+        clip-path: polygon(0% 0%, 100% 0%, 80% 100%, 0% 100%);
+      }
+    }
+  }
+
+  &__top-container {
+    position: relative;
+    z-index: 1;
+    @include breakpoint($footer-breakpoint) {
+      display: flex;
+    }
+  }
+
+  &__top-left {
+    @include breakpoint($footer-breakpoint) {
+      width: 35%;
+      padding-right: 100px;
+    }
+
+    @include xl {
+      padding-right: 150px;
+    }
+  }
+
+  &__top-right {
+    @include breakpoint($footer-breakpoint) {
+      width: 65%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      column-gap: 3rem;
+
+      .footer-actions {
+        grid-column: 3 / span 3;
+      }
+    }
+  }
+
+  &__column {
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+
+    @include breakpoint($footer-breakpoint) {
+      padding: 0;
+      border-bottom: none;
+    }
+
+    &-label {
+      font-family: $font-bold;
+      display: flex;
+      justify-content: space-between;
+
+      @include breakpoint($footer-breakpoint) {
+        padding-bottom: 1rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .toggle-button {
+        width: 20px;
+        height: 20px;
+        background-image: url("../../src/images/icons/arrow-down.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: block;
+        cursor: pointer;
+
+        @include breakpoint($footer-breakpoint) {
+          display: none;
+        }
+      }
+    }
+
+    &.is-active {
+      .footer__column-content {
+        margin-top: 1rem;
+      }
+
+      .toggle-button {
+        transform: rotate(-180deg);
+      }
+    }
+
+    &-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease-out;
+      @include breakpoint($footer-breakpoint) {
+        max-height: unset !important;
+        margin-top: 1rem;
+      }
+    }
+  }
+
+  .contact-details-item {
+    &:not(:last-of-type) {
+      margin-bottom: 1rem;
+    }
+
+    &-label {
+      font-family: $font-bold;
+      margin-bottom: 6px;
+    }
+  }
+
+  .footer-menu-links {
+    .menu-item {
+      &:not(:last-of-type) {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  //   footer bottom
+
+  &__bottom {
+    background-color: $text-dark;
+    padding-top: 1.5rem;
+
+    .acknowledgment {
+      width: 100%;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      margin-bottom: 1.5rem;
+      line-height: normal;
+
+      .acknowledgment-flags {
+        width: fit-content;
+        margin-right: 1rem;
+        margin-bottom: 1rem;
+        img {
+          max-width: 68px;
+        }
+      }
+      @include medium {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+
+    .legal-notice {
+      
+
+      @include medium {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      .social-media__links {
+          margin-bottom: 1rem;
+        ul {
+            display: flex;
+
+            li {
+                margin-right: 1rem;
+            }
+        }
+      }
+
+      .copyright__links {
+        margin-bottom: 1rem;
+          ul {
+              display: flex;
+              flex-wrap: wrap;
+
+              li {
+                  margin-right: 1.5rem;
+                  margin-bottom: 0.5rem;
+
+                  a {
+                      text-decoration: underline;
+                  }
+              }
+          }
+      }
+
+      .copyright__text {
+          padding-bottom: 1rem;
+      }
+    }
+  }
+}

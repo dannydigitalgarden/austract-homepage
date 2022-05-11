@@ -1,0 +1,140 @@
+.guidance-by-industry {
+
+
+    @include large {
+        .select-industry--mobile-btn-open, .select-industry--mobile-btn-close {
+            display: none;
+        }
+    }
+
+    .select-industry--mobile-btn-open, .select-industry--mobile-btn-close {
+        background-color: #287db4;
+        border-radius: 2px;
+        font-size: 1rem;
+        font-family: $font-bold;
+        padding: 1rem;
+        color: $white;
+    }
+
+    .select-industry--mobile-btn-open {
+        padding-left: 55px;
+        background-image: url('../../src/images/icons/list.svg');
+        background-repeat: no-repeat;
+        background-size: 25px 20px;
+        background-position: left 1rem center;
+    }
+
+    .select-industry--mobile-btn-close {
+        display: flex;
+        justify-content: space-between;
+
+        @include large {
+            display: none;
+        }
+
+        .close-button {
+            font-size: 18px;
+        }
+    }
+
+    &__listing-wrapper {
+        @include up-to-large {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 10;
+        background-color: $white;
+        }
+        @include large {
+            display: block !important;
+        }
+    }
+
+    &__listing {
+        display: grid;
+        column-gap: 1rem;
+        row-gap: 0.5rem;
+        grid-template-columns: 1fr;
+
+        @include up-to-large {
+            max-height: 100vh;
+            overflow: scroll;
+            padding-bottom: 5rem;
+        }
+        @include large {
+            grid-template-columns: repeat(3 , 1fr);
+            grid-template-rows: repeat(5 , 1fr);
+            grid-auto-flow: column;
+            column-gap: 2rem;
+            row-gap: 1rem;
+           
+        }
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        padding: 11px 3rem 11px 1.25rem;
+        background-color: $gray-1;
+        width: 100%;
+        border-radius: 2px;
+        position: relative;
+        text-decoration: none;
+        background-image: url('../../src/images/icons/arrow-right-blue.svg');
+        background-position: right 15px center;
+        background-repeat: no-repeat;
+        background-size: 18px;
+        width: 100%;
+
+        &:hover {
+            background-color: darken($gray-1, 1.1);
+        }
+
+
+        &.all-industries {
+            background-color: #287db4;
+            background-image: url('../../src/images/icons/arrow-right-white.svg');
+            &::before {
+                background-color: $primary-color;
+                width: 10px;
+            }
+
+            .guidance-by-industry__item-text {
+                color: white !important;
+            }
+        }
+        
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            display: block;
+            width: 7px;
+            height: 100%;
+            border-radius: 2px;
+            background-color: var(--border-color);
+        }
+
+        &-icon {
+            margin-right: 1rem;
+            img {
+                max-width: 2rem;
+                max-height: 2rem;
+                object-fit: contain;
+            }
+        }
+
+        &-text {
+            font-family: $font-bold;
+            color: $text-dark;
+            font-size: 16px;
+        }
+    }
+
+
+}

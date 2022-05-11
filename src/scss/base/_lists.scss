@@ -1,0 +1,86 @@
+/// Mixin - list-reset
+/// Reset list item defaults when no margin, padding, list styles needed
+@mixin list-reset {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .text-body,
+  .body-copy,
+  .accordion-def {
+  
+    ul {
+      list-style: none;
+      margin: 2 * $space 0;
+    }
+  
+    li {
+      margin-left: $space * 1.5;
+      position: relative;
+      margin-bottom: 8px;
+  
+      @include medium {
+        margin-left: $space * 2;
+      }
+    }
+  
+    ul li::before {
+      content: "";
+      background: $primary-color;
+      width: 8px;
+      height: 8px;
+      position: absolute;
+      top: 10px;
+      left: -1.5rem;
+      border-radius: 50%;
+  
+      @include larger {
+        left: -1.5rem;
+        top: 12px;
+      }
+    }
+  
+    ol {
+      list-style: none;
+      counter-reset: my-counter;
+    }
+  
+    ol li {
+      counter-increment: my-counter;
+      padding-left: 0;
+    }
+  
+    ol li::before {
+      content: counter(my-counter) ". ";
+      color: $gray-5;
+      position: absolute;
+      top: 0;
+      left: -1.5rem;
+    }
+  
+    small {
+      ul,
+      ol,
+      ol li::before {
+        color: $gray-5;
+      }
+    }
+  }
+  
+  .list-item {
+    margin-bottom: 0.2em;
+    padding-left: 0;
+  }
+  
+  // TODO: BEM selectors should be applied to wysiwyg-created content
+  
+  .text-long {
+    ol,
+    ul {
+      li {
+        @extend .list-item;
+      }
+    }
+  }
+  

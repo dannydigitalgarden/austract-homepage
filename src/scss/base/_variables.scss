@@ -1,0 +1,26 @@
+//////////////////////////
+// General Variables
+// Note: colors should go into
+// components/_patterns/00-base/global/01-colors/_color-vars.scss
+// and breakpoint related vars into
+// components/_patterns/00-base/_breakpoints.scss
+
+// Base space
+$space: 1rem;
+
+// For main menu becoming mobile menu
+$menu-toggle-width: '40px';
+
+
+$hero-banner-width: 1385px;
+
+//Transitions
+$trans-dur: 0.3s;
+$trans-dur-long: 0.5s;
+$trans-timing: ease;
+$trans-timing-2: ease-in-out;
+$trans-base: $trans-dur $trans-timing;
+$trans-in-out: $trans-dur $trans-timing-2;
+$trans-long: $trans-dur-long $trans-timing;
+
+

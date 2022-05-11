@@ -1,0 +1,63 @@
+
+
+@font-face {
+  font-family: 'Arial MT';
+  src: url('../../src/fonts/ArialMT.woff2') format('woff2'),
+      url('../../src/fonts/ArialMT.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Arial BoldMT';
+  src: url('../../src/fonts/Arial-BoldMT.woff2') format('woff2'),
+      url('../../src/fonts/Arial-BoldMT.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Arial Italic';
+  src: url('../../src/fonts/Arial-ItalicMT.woff2') format('woff2'),
+      url('../../src/fonts/Arial-ItalicMT.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+
+
+
+  
+  $font-bold: 'Arial BoldMT',  sans-serif;
+  $font-regular: 'Arial MT',  sans-serif;
+  $font-italic: 'Arial Italic', sans-serif;
+  
+  
+  $font-body: $font-regular;
+  $font-footer: $font-body;
+
+  
+  $font-heading: $font-bold;
+  
+  $line-height-1: 1;
+  $line-height-2: 1.25;
+  $line-height-3: 1.375;
+  $line-height-4: 1.5;
+  $line-height-5: 1.75;
+  $line-height-6: 2;
+  
+  $fs-xs: 0.75rem;
+  $fs-sm: 0.875rem;
+  $fs-base: 1rem;
+  $fs-lg: 1.125rem;
+  $fs-xl: 1.25rem;
+  $fs-2xl: 1.5rem;
+  $fs-3xl: 1.875rem;
+  $fs-4xl: 2.25rem;
+  $fs-5xl: 3rem;
+  $fs-6xl: 4rem;
+  
+  

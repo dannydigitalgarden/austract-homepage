@@ -1,0 +1,115 @@
+
+.what-we-do {
+  display: flex;
+  overflow: hidden;
+  background-color: $gray-1;
+
+  @include up-to-xl {
+    flex-direction: column;
+  }
+
+
+  @include xl {
+    height: 350px;
+  }
+
+  &__info {
+    color: $text-dark;
+    position: relative;
+    background: $gray-1;
+    width: 100%;
+    padding: 32px 16px;
+
+    @include medium {
+      padding: 32px 32px;
+    }
+
+    @include xl {
+      padding: 0;
+      width: 46%;
+      background: transparent;
+    }
+
+    &-content {
+      @include xl{
+        padding: 32px 0;
+        left: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        position: absolute;
+        z-index: 5;
+      }
+
+      @include xl {
+        left: 32px;
+      }
+
+      @include breakpoint(1296px) {
+        left: calc((100vw - 1200px) / 2);
+        right: -40px;
+      }
+    }
+
+
+    &::after {
+      @include xl {
+        content: "";
+        background: $gray-1;
+        width: 500px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: -35%;
+        clip-path: polygon(0% 0%,100% 0%,65% 100%,0% 100%);
+        z-index: 1;
+        pointer-events: none;
+      }
+
+
+    }
+
+  }
+
+  &__intro {
+    color: $text-dark;
+    font-family: $font-regular;
+    line-height: 1.75;
+    font-size: 1rem;
+   
+    @include xl {
+      max-width: 520px;
+    }
+  }
+
+  &__image {
+    width: 54%;
+    position: relative;
+
+    img {
+      min-width: 100%;
+      height: 100%;
+      right: 0;
+      position: absolute;
+      object-fit: cover;
+    }
+
+    @include up-to-xl {
+      width: 100%;
+      height: 350px;
+    }
+
+    @include up-to-larger {
+      height: 300px;
+    }
+
+    @include up-to-small-medium {
+      height: 250px;
+    }
+
+    @include up-to-small {
+      height: 180px;
+    }
+  }
+
+}
+

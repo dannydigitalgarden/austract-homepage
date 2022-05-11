@@ -1,0 +1,68 @@
+.header-latest-update {
+    a {
+        color: white;
+        text-decoration: none;
+    }
+
+    padding: 3rem 0;
+    @include large {
+        display: flex;
+    }
+
+    .latest-update{
+        color: white;
+
+        @include large {
+            width: 70%;
+            padding-right: 5rem;
+        }
+
+        @include xl2 {
+            padding-right: 10rem;
+        }
+
+        .latest-update__subtitle {
+            margin-bottom: 0.5rem;
+            font-family: $font-bold;
+            font-size: 18px;
+        }
+
+        .latest-update__intro {
+            margin: 1rem 0;
+            @include fluid-font(1.35rem, 0.81)
+        }
+
+        .latest-update__button {
+            margin-top: 1rem;
+            background-color:  rgba(0, 0, 0, 0.35) !important;
+        }
+    }
+
+    .frequently-visited {
+        display: none;
+
+        @include large {
+            display: block;
+            width: 30%;
+        }
+
+        .frequently-visited__title {
+            color: $secondary-color;
+            margin-bottom: 0.5rem;
+            font-family: $font-bold;
+            font-size: 14px;
+        }
+
+        .frequently-visited__links {
+            li {
+                a {
+                    @extend .button-secondary;
+                    @extend .button-icon;
+                    background-image: url('../../src/images/icons/arrow-right-white.svg') !important;
+                    color: white !important;
+                    font-family: $font-regular !important;
+                }
+            }
+        }
+    }
+}

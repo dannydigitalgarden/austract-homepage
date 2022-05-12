@@ -1,24 +1,56 @@
 .header-latest-update {
+    padding: 3rem 0;
+    overflow: hidden;
+    @include large {
+        display: flex;
+    }
+
     a {
         color: white;
         text-decoration: none;
     }
 
-    padding: 3rem 0;
-    @include large {
-        display: flex;
-    }
-
     .latest-update{
         color: white;
+        position: relative;
 
         @include large {
             width: 70%;
             padding-right: 5rem;
         }
 
+        @include breakpoint(1270px) {
+
+            &::after, &::before {
+                content: '';
+                display: block;
+                width: 5rem;
+                height: 100%;
+                pointer-events: none;
+                position: absolute;
+                bottom: -3rem;
+                z-index: 1;
+                transform: skew(-25deg, 0deg);
+            }
+
+            &::after {
+                background-color: #084970;
+                right: 5rem;
+            }
+
+            &::before {
+                background-color: #155176;
+                right: 10rem;
+            }
+        }
+
         @include xl2 {
             padding-right: 10rem;
+        }
+
+        &__content {
+            position: relative;
+            z-index: 2;
         }
 
         .latest-update__subtitle {
@@ -29,7 +61,11 @@
 
         .latest-update__intro {
             margin: 1rem 0;
-            @include fluid-font(1.35rem, 0.81)
+            @include fluid-font(1.35rem, 0.81);
+
+            @include large {
+                max-width: 85%;
+            }
         }
 
         .latest-update__button {
@@ -40,10 +76,13 @@
 
     .frequently-visited {
         display: none;
+        
 
         @include large {
             display: block;
             width: 30%;
+            position: relative;
+            z-index: 2;
         }
 
         .frequently-visited__title {

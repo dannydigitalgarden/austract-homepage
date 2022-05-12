@@ -1,4 +1,11 @@
 .header-top-menu {
+    z-index: 5;
+    position: relative;
+    display: none;
+
+    @include xl {
+        display: block;
+    }
     .header-top-menu-links {
         display: flex;
         justify-content: flex-end;

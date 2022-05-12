@@ -1,13 +1,15 @@
 .header-main-menu {
+    display: none;
     margin-top: 1.5rem;
     position: relative;
-    @include large {
+    z-index: 999;
+    @include xl {
         display: flex;
-        align-items: center;
+        align-items: flex-end;
     }
 
     .header-main-menu__list {
-        @include large {
+        @include xl {
             width: 70%;
             padding-right: 5rem;
         }
@@ -19,13 +21,13 @@
 
     .main-menu__content {
         display: flex;
-        padding-bottom: 30px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     }
 
     .main-menu__item.level-1 {
         margin-right: 2rem;
         cursor: pointer;
+        padding-bottom: 20px;
         &:last-of-type {
             margin-right: 0;
         }
@@ -35,6 +37,10 @@
             font-family: $font-bold;
             text-decoration: none;
         }
+
+        &.is-active {
+           box-shadow: inset 0px -5px 0px $secondary-color;;
+        }
     }
 
     .main-menu__second-level {
@@ -42,7 +48,6 @@
         position: absolute;
         top: calc(100%);
         background-color: white;
-        z-index: 9;
         width: 100%;
         padding: 2rem 3rem 3rem 3rem;
         border-bottom: 5px solid $secondary-color;
@@ -117,14 +122,14 @@
 }
 
 .header-main-menu__search-form {
-    @include large {
+    @include xl {
         width: 30%;
     }
     .search-form {
         width: 100%;
        .search-input {
         width: 100%;
-        padding: 1.2rem 3rem 1rem 1rem;
+        padding: 1.2rem 3rem 1.2rem 1rem;
         font-family: $font-regular;
         font-size: 20px;
         color: white;
@@ -141,3 +146,48 @@
        } 
     }
 }
+
+
+@include xl {
+    .body-menu-hover {
+            &::before {
+                content: "";
+                position: absolute;
+                top: var(--overlay-top);
+                width: 100%;
+                height: var(--overlay-height);
+                animation: fade-in 0.2s ease-in;
+                z-index: 99;
+                background: rgba(0, 0, 0, 0.5);
+              }
+
+
+    }
+  
+    .body-menu-hover-fade-out {
+      &::before {
+        animation: fade-out 0.2s ease-in;
+      }
+    }
+  }
+
+  
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fade-out {
+    0% {
+      opacity: 1;
+    }
+  
+    100% {
+      opacity: 0;
+    }
+  }
